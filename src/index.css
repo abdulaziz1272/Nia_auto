@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+button{
+  cursor: pointer;
+}
+button:hover{
+  /* opacity: 70%; */
+  
+  transform: scale(1.02);
+  transition: transform 0.1s linear;
+}
+button:active{
+  transform: scale(1);
+}
