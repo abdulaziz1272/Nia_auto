@@ -15,7 +15,9 @@ function EnteryPage() {
   }, [lang]);
 
   const direct = () => {
-    navigate("loginPage");
+    setTimeout(() => {
+      navigate("/loginPage");
+    }, 500);
   };
 
   // 3. Translations
