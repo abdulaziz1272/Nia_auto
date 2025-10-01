@@ -48,13 +48,6 @@
     height: 35px;
     width: 355px;
 }
-.password-wrapper>span{
-    font-size: 25px;
-    /* border: solid 1px; */
-    height: 26px;
-    cursor: pointer;
-    color: rgb(116, 116, 116);
-}
 .password-wrapper>i{
     font-size: 20px;
     /* border: solid 1px; */
@@ -71,6 +64,7 @@
 .signUp-bottom{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 400px;
     padding-top: 25px;
 }
@@ -89,4 +83,13 @@
 
 .signUp-bottom>button:hover{
     box-shadow: 0 0 10px 5px rgba(52,152,219,0.5);
+}
+.signUp-bottom>p{
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+.signUp-bottom>p:hover{
+    color: rgb(230, 230, 230);
 }

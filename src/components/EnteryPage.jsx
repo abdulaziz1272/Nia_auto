@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EnteryPage.css';
 import niaEnter from '../assets/nia-enter.png';
+import Aos from 'aos';
+import "aos/dist/aos.css";
+
 
 function EnteryPage() {
   const navigate = useNavigate();
+  useEffect(() => {
+    Aos.init({ duration: 1300, once: true });
+  }, []);
 
   // 1. Load saved language from localStorage (default: "uz")
   const [lang, setLang] = useState(localStorage.getItem("lang") || "uz");
@@ -52,7 +58,7 @@ function EnteryPage() {
         <option value="en">En</option>
       </select>
 
-      <div className="entery-container">
+      <div data-aos="zoom-in-down" className="entery-container">
         <img src={niaEnter} alt="" className='entery-main-img' />
 
         <p>{translations[lang].desc}</p>
