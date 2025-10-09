@@ -103,7 +103,9 @@ function SignUpPage() {
             setLocalPass("");
             setConfirmValue("");
 
-            navigate("/");
+            setTimeout(() => {
+                navigate("/mainPage");
+            }, 300);
         }
     })
     const directBack = () => {
