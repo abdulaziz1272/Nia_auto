@@ -276,8 +276,6 @@ function MainPage() {
         <div className="main-footer">
           <img src={mainLogo} alt="logo" />
           <p>Coded by A.Abdulaziz</p>
-
-
         </div>
       </div>
 
