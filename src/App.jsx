@@ -4,6 +4,7 @@ import MainPage from './components/MainPage';
 import EnteryPage from './components/EnteryPage';
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage';
+import AdminPage from './components/AdminPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='loginPage' element={<LoginPage/>}/>
         <Route path='signUpPage' element={<SignUpPage/>}/>
         <Route path='mainPage' element={<MainPage/>}/>
+        <Route path='adminPage' element={<AdminPage/>}/>
       </Routes>
     </BrowserRouter>
   )

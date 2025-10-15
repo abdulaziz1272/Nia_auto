@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MainPage.css';
 import mainLogo from '../assets/nia-enter.png';
 import NiaCar from '../assets/nia-car.webp';
 
 function MainPage() {
   const [lang, setLang] = useState(localStorage.getItem("lang") || "uz");
+  const navigate = useNavigate();
 
+  const locateAdmin = () => {
+    navigate('/adminPage');
+  }
   const translation = {
     uz: {
       about: "Biz 5 yildan beri avto ehtiyot qismlar bozorida faoliyat yuritamiz va hozirda O‘zbekistonning bir nechta hududlarida mijozlarga xizmat ko‘rsatamiz. Platformamiz ishonchli sotuvchilarni haydovchilar va mexaniklar bilan bog‘lab, sifatli qismlar, adolatli narxlar va shaffof reytinglarni taqdim etadi. Bizning maqsadimiz — ehtiyot qismlarni topish va xarid qilish jarayonini hammaga qulay va ishonchli qilish.",
@@ -43,7 +48,7 @@ function MainPage() {
             <li><a href="#products">{translation[lang].products}</a></li>
             <li><a href="#contactUs">{translation[lang].contact}</a></li>
           </ul>
-          <div className="profile">
+          <div className="profile" onClick={locateAdmin} title={localStorage.getItem("localUser") || "Profile"}>
             <i className="fa-solid fa-user"></i>
           </div>
         </div>

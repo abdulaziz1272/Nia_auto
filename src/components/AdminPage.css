@@ -1,0 +1,120 @@
+.admin-page{
+    width: 100%;
+    background: #143a7d;
+    min-height: 100vh;
+}
+.admin-header{
+    width: 100%;
+    height: 100px;
+    background: rgba(6, 83, 170, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px 0 20px;
+    position: fixed;
+    z-index: 10;
+}
+.admin-header>img{
+    width: 280px;
+}
+.search-inp{
+    width: 400px;
+    height: 35px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.search-inp>input{
+    width: 360px;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.search-inp>i{
+    font-size: 22px;
+    color: #0652aa;
+    cursor: pointer;
+    /* border: solid 1px #0652aa; */
+}
+.header-mid{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.add-icon{
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6ea6df, #005bb5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    border: 2px solid rgb(17, 110, 153);
+}
+.add-icon:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
+
+
+
+.admin-body{
+    padding: 140px 130px 50px 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.category-list{
+    display: flex;
+    font-size: 25px;
+    gap: 60px;
+    color: white;
+}
+.category-list>li{
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.category-list>li:hover{
+    background: #1c4da1;
+}
+.products-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.products-list>li{
+    width: 400px;
+    background: #3571d8;
+    border-radius: 10px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(187, 185, 185);
+    align-items: center;
+}
+.item-left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item-left>h3{
+    color: rgb(210, 236, 251);
+    font-size: 25px;
+    width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.item-right{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 5px;
+}
