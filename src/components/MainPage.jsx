@@ -228,7 +228,7 @@ function MainPage() {
                 width="100%"
                 height="100%"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map Location"
+                title="Namangan Nia-auto Location"
               ></iframe>
               <ul className='tels'>
                 <li>Tell: <a href="">+998 99 977 00 50</a></li>
@@ -262,7 +262,7 @@ function MainPage() {
                 width="100%"
                 height="100%"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Map Location"
+                title="Namangan Nia-auto ombor"
               ></iframe>
               <ul className='tels'>
                 <li>Tell: <a href="">+998 99 977 00 50</a></li>
