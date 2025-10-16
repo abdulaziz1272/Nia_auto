@@ -6,16 +6,20 @@ import { data, carModels, carLocations } from './Data.js';
 
 function AdminPage() {
     const navigate = useNavigate();
-
     const locateMain = () => {
         navigate('/mainPage');
+    }
+
+    const [isAddOpen, setIsAddOpen] = useState(false);
+    const toggleAddPanel = () => {
+        setIsAddOpen(!isAddOpen);
     }
   return (
     <div className='admin-page'>
         <div className="admin-header">
             <img src={mainLogo} alt="logo" />
             <div className='header-mid'>
-                <div className='add-icon'>
+                <div className='add-icon' onClick={toggleAddPanel}>
                     <i class="fa-solid fa-plus"></i>
                 </div>
                 <div className="search-inp">
@@ -50,6 +54,46 @@ function AdminPage() {
                 </ul>
             </div>
         </div>
+        <div className="add-panel" style={{display : isAddOpen ? "flex" : "none"}}>
+            <h2>Mahsulot qo'shish</h2>
+            <div className="add-form">
+                <div id="x-btn" onClick={toggleAddPanel}><span>+</span></div>
+                <div>
+                    <label htmlFor="pro-name">Mahsulot nomi:</label>
+                    <input type="text" id='pro-name' placeholder='Mahsulot nomi' />
+                </div>
+                <div>
+                    <label htmlFor="pro-price">Mahsulot narxi:</label>
+                    <input type="text" id='pro-price' placeholder='Mahsulot narxi' />
+                </div>
+                <div>
+                    <label htmlFor="pro-num">Mahsulot soni:</label>
+                    <input type="text" id='pro-num' placeholder='Mahsulot soni' />
+                </div>
+                <div>
+                    <label htmlFor="pro-loca">Mahsulot joylashuvi:</label>
+                    <div className="selection-tab">
+                        <select id='pro-loca'>
+                            {carLocations.map((loc, index) => (
+                                <option key={index} value={loc}>{loc}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label htmlFor="pro-type">Mahsulot modeli:</label>
+                    <div className="selection-tab">
+                        <select id='pro-type'>
+                            {carModels.map((model, index) => (
+                                <option key={index} value={model}>{model}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <button className='add-btn'>Qo'shish</button>
+            </div>
+        </div>
+        <div onClick={toggleAddPanel} className="shadow-box" style={{display: isAddOpen ? "block" : "none"}}></div>
     </div>
   )
 }

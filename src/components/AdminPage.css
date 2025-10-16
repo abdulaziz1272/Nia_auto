@@ -2,6 +2,7 @@
     width: 100%;
     background: #143a7d;
     min-height: 100vh;
+    position: relative;
 }
 .admin-header{
     width: 100%;
@@ -117,4 +118,123 @@
     flex-direction: column;
     align-items: end;
     gap: 5px;
+}
+
+
+.add-panel{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 620px;
+    padding: 50px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    z-index: 12;
+    background: #1c4da1;
+    border-radius: 20px;
+    button{
+        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background: linear-gradient(135deg, #6ea6df, #005bb5);
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        border: 2px solid rgb(17, 110, 153);
+    }
+}
+#x-btn{
+    position: absolute;
+    top: -105px;
+    left: 360px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+#x-btn:hover{
+    opacity: 0.9;
+}
+#x-btn:active{
+    transform: scale(0.95);
+}
+#x-btn span{
+    
+    transform: rotate(45deg);
+}       
+.add-panel>h2{
+    color: white;
+    font-size: 35px;
+}
+.add-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.add-form>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    label{
+        color: rgb(207, 200, 200);
+        font-size: 16px;
+        cursor: pointer;    
+    };
+}
+.selection-tab{
+    width: 370px;
+    height: 35px;
+    border-radius: 5px;
+    padding-right: 15px;
+    font-size: 16px;
+    background: white;
+    select{
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 0 15px;
+    }
+}
+.add-form>div>input{
+    width: 370px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-size: 16px;
+
+}
+
+
+
+.shadow-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 11;
 }
