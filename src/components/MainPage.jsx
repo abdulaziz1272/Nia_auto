@@ -11,6 +11,13 @@ function MainPage() {
   const locateAdmin = () => {
     navigate('/adminPage');
   }
+  const locateLogin = () => {
+    navigate("/loginPage")
+  }
+  const [settingOpen, setSettingOpen] = useState(false);
+  const toggleSettingOpen = () => {
+    setSettingOpen(prev => !prev);
+  }
   const translation = {
     uz: {
       about: "Biz 5 yildan beri avto ehtiyot qismlar bozorida faoliyat yuritamiz va hozirda O‘zbekistonning bir nechta hududlarida mijozlarga xizmat ko‘rsatamiz. Platformamiz ishonchli sotuvchilarni haydovchilar va mexaniklar bilan bog‘lab, sifatli qismlar, adolatli narxlar va shaffof reytinglarni taqdim etadi. Bizning maqsadimiz — ehtiyot qismlarni topish va xarid qilish jarayonini hammaga qulay va ishonchli qilish.",
@@ -48,11 +55,27 @@ function MainPage() {
             <li><a href="#products">{translation[lang].products}</a></li>
             <li><a href="#contactUs">{translation[lang].contact}</a></li>
           </ul>
-          <div className="profile" onClick={locateAdmin} title={localStorage.getItem("localUser") || "Profile"}>
+          <div className="profile" onClick={toggleSettingOpen} title={localStorage.getItem("localUser") || "Profile"}>
             <i className="fa-solid fa-user"></i>
           </div>
         </div>
       </div>
+
+      <ul className="setting-bar" style={{display: settingOpen ? "flex" : "none"}}>
+        <li>
+          <i className="fa-solid fa-gear"></i>
+          <span>Setting</span>
+        </li>
+        <li onClick={locateAdmin}>
+          <i className="fa-solid fa-user-tie"></i>
+          <span>Admin panel</span>
+        </li>
+        <li onClick={locateLogin}>
+          <i className="fa-solid fa-right-from-bracket"></i>
+          <span>Log out</span>
+        </li>
+      </ul>
+      <div className="mirror-box" onClick={toggleSettingOpen} style={{display: settingOpen ? "block" : "none"}}></div>
 
 
       <div className="main-rest" id='aboutUs'>

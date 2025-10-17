@@ -132,7 +132,7 @@ function AdminPage() {
                             </select>
                         </div>
                     </div>
-                    <button className='add-btn'>Qo'shish</button> 
+                    <button className='add-btn'>Qo'shish</button>
                 </div>
             </div>
             <div

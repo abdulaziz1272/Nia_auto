@@ -4,6 +4,46 @@
     min-height: 100vh;
     position: relative;
 }
+.setting-bar{
+    position: fixed;
+    top: 90px;
+    right: 5px;
+    width: 150px;
+    height: 140px;
+    background: rgba(2, 84, 178, 0.9);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+    z-index: 11;
+    padding: 20px 5px;
+    gap: 5px;
+}
+.setting-bar>li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: rgb(168, 219, 241);
+    width: 140px;
+    padding-left: 10px;
+    border-radius: 5px;
+    height: 30px;
+}
+.setting-bar>li:hover{
+    background: #3571d8;
+}
+
+
+.mirror-box{
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    z-index: 10;
+}
+
+
+
 .admin-header{
     width: 100%;
     height: 100px;
@@ -160,7 +200,7 @@
     width: 35px;
     height: 35px;
     border-radius: 10px;
-    background: red;
+    background: rgb(254, 70, 70);
     display: flex;
     align-items: center;
     justify-content: center;
