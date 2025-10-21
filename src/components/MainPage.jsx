@@ -3,12 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import './MainPage.css';
 import mainLogo from '../assets/nia-enter.png';
 import NiaCar from '../assets/nia-car.webp';
+import { adminCode } from './Data';
 
 function MainPage() {
   const [lang, setLang] = useState(localStorage.getItem("lang") || "uz");
   const [settingOpen, setSettingOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const navigate = useNavigate();
+  const [verifyOpen, setVerifyOpen] = useState(false);
+  const toggleVerify = () => setVerifyOpen(!verifyOpen);
+  const closeVerify = () => setVerifyOpen(false);
+  const [varCode, setVarCode] = useState("")
+  const handleEnter = (event) => {
+    setVarCode(event.target.value);
+    console.log(varCode);
+  };
+  
 
   useEffect(() => {
     localStorage.setItem("lang", lang);
@@ -29,7 +39,15 @@ function MainPage() {
     setLang(langName);
   };
 
-  const locateAdmin = () => navigate('/adminPage');
+  const locateAdmin = () => {
+    if(varCode == adminCode){
+      navigate('/adminPage')
+    }else if(varCode == ""){
+      alert("Parol kiritilmagan")
+    }else{
+      alert("Noto'g'ri kod kiritildi");
+    }
+  };
   const locateLogin = () => navigate('/loginPage');
   const toggleSettingOpen = () => setSettingOpen(prev => !prev);
   const toggleLangBar = () => setLangOpen(prev => !prev);
@@ -86,11 +104,17 @@ function MainPage() {
 
       {/* PROFILE CONTROL */}
       <ul className="setting-bar" style={{ display: settingOpen ? "flex" : "none" }}>
-        <li onClick={toggleLangBar}>
+        <li onClick={() => {
+          toggleLangBar();
+          closeVerify();
+        }}>
           <i className="fa-solid fa-gear"></i>
           <span>Setting</span>
         </li>
-        <li onClick={locateAdmin}>
+        <li onClick={() => {
+          toggleVerify();
+          closeLangBar();
+        }}>
           <i className="fa-solid fa-user-tie"></i>
           <span>Admin panel</span>
         </li>
@@ -113,12 +137,22 @@ function MainPage() {
         </ul>
       </div>
 
+      {/* admin varification */}
+      <div className='admin-varify' style={{display: verifyOpen ? "flex" : "none"}}>
+        <label htmlFor="admin-var">Parol</label>
+        <div>
+          <input value={varCode} onChange={handleEnter} type="password" id='admin-var'/>
+          <button onClick={locateAdmin}>Kirish</button>
+        </div>
+      </div>
+
       {/* BACKDROP */}
       <div
         className="mirror-box"
         onClick={() => {
           closeLangBar();
           toggleSettingOpen();
+          closeVerify();
         }}
         style={{ display: settingOpen ? "block" : "none" }}
       ></div>

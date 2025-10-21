@@ -300,3 +300,4 @@ export const data = [
 
 export const carModels = ["Nexia", "Cobalt", "Spark", "Malibu", "Gentra", "Lacetti"];
 export const carLocations = ["Toshkent", "Namangan"];
+export const adminCode = "1272";
